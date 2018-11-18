@@ -23,10 +23,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "presentation/build.gradle" }}
-      - run:
-          name: Run Android UI Tests
-          command: ./gradlew connectedAndroidTest
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "build.gradle" }}
       - run:
           name: Run Tests
           command: ./gradlew test
